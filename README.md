@@ -1,9 +1,13 @@
 # Restore Switch (Tuning Board, Kernal/Basic inside Winbond 27E257)
 
 changes and new features (June2021):
+
     - power on reset added, changed PIN defnitions for PlatformIO, typos 
+
     - a manual reset WITHOUT switching Kernal can be performed by pressing the Restore key for 800 - 2000 ms
+
     - true WHITE LED multiplexing added during RESET procedure
+
 
 
 
