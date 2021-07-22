@@ -6,7 +6,8 @@ complete makeover of the hardware and code, old version is in DIR "RGB" now
 
     - Firmware: 
 
-    - a manual reset WITHOUT switching Kernal can be performed by pressing the Restore key for 800 - 2000 ms, for feedback, LEDs are blinking "white" twice to indicate  800ms. 
+    - a manual reset WITHOUT switching Kernal can be performed by holding the Restore key 
+      for 800 - 2000 ms, as a feedback, LEDs are blinking "white" twice to indicate  800ms. 
 
     - during RESET procedure, LEDs are FlAsHiNg "white"
 
@@ -19,13 +20,6 @@ complete makeover of the hardware and code, old version is in DIR "RGB" now
 </p>
 
 Programming ATTiny84 to act as kernel switch for the C64 Tuning Board to use the Winbond EEPROM W27E257, where Vpp and A14 are switched:
-
-<div style="padding:56.25% 0 0 0;position:relative;">
-<iframe src="https://player.vimeo.com/video/577234874?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ExpPortCover.mov">
-</iframe>
-</div>
-<script src="https://player.vimeo.com/api/player.js"></script>
-
 
 
 <p align="center">
