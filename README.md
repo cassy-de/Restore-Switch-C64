@@ -40,7 +40,7 @@ Programming ATTiny84 to act as kernel switch for the C64 Tuning Board to use the
 
 
 <p align="center">
-  <img src="attiny84.png">
+  <img src="">
 </p>
 
 
@@ -53,15 +53,10 @@ avrdude -p attiny84 -c usbtiny -U lfuse:w:0xe2:m -U hfuse:w:0xd4:m
 </code>
 
 or:
+
 <code>
 minipro -p attiny84 -w fuses.bin -c config
 </code>
-
-in case You prefer this programmer TL866 
-
-<p align="center">
-  <img src="TL866IIplus.png">
-</p>
 
 Then flash the firmware:
 
@@ -70,6 +65,7 @@ avrdude -p attiny84 -c usbtiny -U flash:w:"firmware.hex":i -v -V -u
 </code>
 
 or
+
 <code>
 minipro -p attiny84 -w firmware.hex
 </code> 
