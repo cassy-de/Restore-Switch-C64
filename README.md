@@ -14,6 +14,9 @@ complete makeover of the hardware and code, old version is in DIR "RGB" now
 
     - After 6s, a moving rainbow pattern is shown on all 16 LEDs for entertainment
 
+<p align="center">
+  <img src="ExpPortCover.gif">
+</p>
 
 Programming ATTiny84 to act as kernel switch for the C64 Tuning Board to use the Winbond EEPROM W27E257, where Vpp and A14 are switched:
 
@@ -39,9 +42,6 @@ Programming ATTiny84 to act as kernel switch for the C64 Tuning Board to use the
 
 
 
-<p align="center">
-  <img src="">
-</p>
 
 
 Prepare the controller: only once to set the fuses (internal 8Mhz, BOD Level 4.3V, EESAVE):
