@@ -65,7 +65,7 @@ Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 int AudioIn0 = A5;    // AUDIO 0 Input PIN - first channel - MISO
 int AudioValue0 = 0;  // AUDIO 0 Value - first channel
 int AudioIn1 = A4;    // AUDIO 1 Input PIN - second channel - SCLK
-int AudioValue1 = 0;  // AUDIO 1 Value - first channel
+int AudioValue1 = 0;  // AUDIO 1 Value - second channel
 
 boolean mono = false;   // only one audio channel, but displayed on both VU
 int autoscale = 4;         // dynamic value of scale amplification 
