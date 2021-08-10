@@ -40,13 +40,13 @@ See pin definition on the "inside" of the ic pinout below
               ------------   |
                             / \
                     +5V o    ^    o GND
-               XTAL/D10 o 0    10 o D0/A0  -> OUT KERNAL "PIN A15" (J2)     Vpp = 27E257 = always HIGH
+  WS2812     XTAL/D10 o 0    10 o D0/A0  -> OUT KERNAL "PIN A15" (J2)     Vpp = 27E257 = always HIGH
                XTAL/D9  o 1     9 o D1/A1  -> OUT KERNAL "PIN A14" (J15)    A14 = 27E257
             (ICSP) RES  o 11    8 o D2/A2  <- IN "RESTORE KEY"
-  WS2812 (was ROT)  D8  o 2     7 o D3/A3  -> _RESET Pin C64
+  (was ROT)         D8  o 2     7 o D3/A3  -> _RESET Pin C64
   (was GRÜN)     A7/D7  o 3     6 o D4/A4  SCK   AUDIO1
-  (was BLAU)OSI  A6/D6  o 4     5 o D5/A5  MISO  AUDIO0
-  
+  (was BLAU)MOSI A6/D6  o 4     5 o D5/A5  MISO  AUDIO0
+                  ^-- alternative AUDIO0 
 */
 
 
@@ -57,11 +57,13 @@ int kernalPIN15 = 10;   // was 0
 int restoreKey = 8;   // was 2
 int resetPIN   = 7;   // was 3
 
-#define LED_PIN   2   // changed to "Red"-Pin 
+#define LED_PIN   0   //  aka Pin #2 of Tiny aka XTAL1 aka PB0 aka PIN10 <- clockwise 
 #define LED_COUNT 16
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
+// ATTENTION !! PCBs might use MOSI instead of MISO ! Please select the correct one from below
 
+// int AudioIn0 = A6;    // AUDIO 0 Input PIN - first channel - MOSI
 int AudioIn0 = A5;    // AUDIO 0 Input PIN - first channel - MISO
 int AudioValue0 = 0;  // AUDIO 0 Value - first channel
 int AudioIn1 = A4;    // AUDIO 1 Input PIN - second channel - SCLK
