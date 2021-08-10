@@ -13,7 +13,13 @@ complete makeover of the hardware and code, old version is in DIR "RGB" now
 
     - Holding the restore key for more then 2s -> switching the kernel, LEDs are changing their colors
 
-    - After 6s, a moving rainbow pattern is shown on all 16 LEDs for entertainment
+    - After 6s, a "Show Program" pattern is shown on all 16 LEDs for entertainment
+    - 1st pattern:  moving rainbow 
+    - 2nd pattern:  analog VU Meter of SID sounds 
+    - 3rd pattern:  chasing lights  
+    - 4th pattern:  twinkle little star  on a blue night sky
+
+    - changing the patterns by "double tapping"  the restore key 
 
 <p align="center">
   <img src="ExpPortCover.gif">
