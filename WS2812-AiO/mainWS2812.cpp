@@ -334,6 +334,7 @@ void loop() {
       lastStateSwitchTime = millis();
 
       state++;
+//  change below to <<state == 4>> for larger EEPROMS
       if (state == 2) state = 0;
 
       doState();
