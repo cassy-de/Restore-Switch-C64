@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
+#include <EEPROM.h>
 // #ifdef __AVR__
 //  #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
 // #endif
@@ -50,7 +51,6 @@ See pin definition on the "inside" of the ic pinout below
 */
 
 
-#include <EEPROM.h>
 
 int kernalPIN14 = 9;   // was 1
 int kernalPIN15 = 10;   // was 0   
@@ -256,7 +256,7 @@ void doState() {    // kernal switcher - here's where the magic happens
       digitalWrite(kernalPIN14, HIGH);  // Kernal: HIGH Address
       digitalWrite(kernalPIN15, HIGH);  // Vpp must be STAY HIGH
       break;
-/***  uncomment if needed for larger EEPROMS
+/***  uncomment if needed for larger 512k EEPROMS, dom't forget to change line 338
       case 2:
       green();
       digitalWrite(kernalPIN14, LOW);    // Kernal: LOW Address
@@ -269,7 +269,7 @@ void doState() {    // kernal switcher - here's where the magic happens
       break;
 */
   }
-  EEPROM.put(10, state);
+  EEPROM.update(1, state);
 }
 
 boolean isRestoreLongPressed() {
@@ -314,8 +314,8 @@ void setup() {
   strip.show();            // Turn OFF all pixels ASAP
   strip.setBrightness(50); // Set BRIGHTNESS to about 1/5 (max = 255)
 
-  EEPROM.get(10, state);       // read last selected Kernal from EEPROM of Tiny
-  EEPROM.get(20, mode2show);   // read last selected  "Show Program" value
+  state = EEPROM.read(1);       // read last selected Kernal from EEPROM of Tiny
+  mode2show = EEPROM.read(2);   // read last selected  "Show Program" value
 
   if(state < 0 || state > 3) state = 0;
  
@@ -334,7 +334,7 @@ void loop() {
       lastStateSwitchTime = millis();
 
       state++;
-//  change below to <<state == 4>> for larger EEPROMS
+//  change below to <<state == 4>> for larger 512k EEPROMS
       if (state == 2) state = 0;
 
       doState();
@@ -366,7 +366,7 @@ void loop() {
     if ( mode2show > maxmode2show ) {
       mode2show = 0;
     }
-    EEPROM.put(20, mode2show);   // save selected  "Show Program" value
+    EEPROM.update(2, mode2show);   // save selected  "Show Program" value
   }
 
   if (millis() - lastStateSwitchTime > delay2show) { // Delay to Show Time (6s)

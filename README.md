@@ -1,5 +1,7 @@
 # Restore Switch (Tuning Board, Kernal/Basic inside Winbond 27E257)
 
+- newest version in WS2812-AiO, three separately versions for 256 - 512K EEPROMS
+
 complete makeover of the hardware and code, old version is in DIR "RGB" now
 
     - Hardware: replacing the RGB-LED by WS2812-stripe (here 16 LEDs), Data PIN2 on Tiny84
