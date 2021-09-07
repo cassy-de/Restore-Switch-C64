@@ -165,13 +165,13 @@ void twinklestar(uint32_t col) {
       delayeffect = 0;
       for (uint16_t i=0; i < strip.numPixels(); i++) {
         if ( random(10) > 8 ) {
-          strip.setPixelColor(i+chasecnt, col);             // randomly flashing white LEDs
+          strip.setPixelColor(i, col);             // randomly flashing white LEDs
         }
       }
       strip.show();
       delay(30);
       for (uint16_t i=0; i < strip.numPixels(); i++) {
-        strip.setPixelColor(i+chasecnt, 0,0,64);               // and now dim all LEDs 
+        strip.setPixelColor(i, 0,0,64);               // and now dim all LEDs 
       }
       strip.show();
     }
